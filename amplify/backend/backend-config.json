@@ -17,6 +17,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Polly",
       "convertType": "speechGenerator"
+    },
+    "interpretTextf16f0efa": {
+      "providerPlugin": "awscloudformation",
+      "service": "Comprehend",
+      "interpretType": "interpretText"
     }
   }
 }
