@@ -16,5 +16,23 @@
         "reactspeechmars2d300eb2": {}
       }
     }
+  },
+  "ramtest": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactspeechmars-ramtest-150318-authRole",
+      "UnauthRoleArn": "arn:aws:iam::657602651525:role/amplify-reactspeechmars-ramtest-150318-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::657602651525:role/amplify-reactspeechmars-ramtest-150318-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactspeechmars-ramtest-150318-deployment",
+      "UnauthRoleName": "amplify-reactspeechmars-ramtest-150318-unauthRole",
+      "StackName": "amplify-reactspeechmars-ramtest-150318",
+      "StackId": "arn:aws:cloudformation:us-east-1:657602651525:stack/amplify-reactspeechmars-ramtest-150318/7a2483a0-89fc-11ec-a934-0e954bb76271",
+      "AmplifyAppId": "diyyyz4b8iu03"
+    },
+    "categories": {
+      "auth": {
+        "reactspeechmars2d300eb2": {}
+      }
+    }
   }
 }

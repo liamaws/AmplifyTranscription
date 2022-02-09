@@ -98,7 +98,7 @@ function App() {
           source: {
             bytes
           },
-          // language: "en-US", // other options are "en-GB", "fr-FR", "fr-CA", "es-US"
+          language: "en-US", // other options are "en-GB", "fr-FR", "fr-CA", "es-US"
         },
       }).then(({ transcription: { fullText } }) => setResponse(fullText))
         .catch(err => setResponse(JSON.stringify(err, null, 2)))
