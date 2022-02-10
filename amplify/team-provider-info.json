@@ -40,5 +40,35 @@
         }
       }
     }
+  },
+  "sacapstone": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactspeechmars-sacapstone-93127-authRole",
+      "UnauthRoleArn": "arn:aws:iam::109898158317:role/amplify-reactspeechmars-sacapstone-93127-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::109898158317:role/amplify-reactspeechmars-sacapstone-93127-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactspeechmars-sacapstone-93127-deployment",
+      "UnauthRoleName": "amplify-reactspeechmars-sacapstone-93127-unauthRole",
+      "StackName": "amplify-reactspeechmars-sacapstone-93127",
+      "StackId": "arn:aws:cloudformation:us-east-1:109898158317:stack/amplify-reactspeechmars-sacapstone-93127/49259fa0-8a97-11ec-9c8b-0aee4b774141",
+      "AmplifyAppId": "d3oo8gk71zj1du"
+    },
+    "categories": {
+      "auth": {
+        "reactspeechmars2d300eb2": {}
+      },
+      "function": {
+        "storeresponse": {
+          "deploymentBucketName": "amplify-reactspeechmars-sacapstone-93127-deployment",
+          "s3Key": "amplify-builds/storeresponse-72512f7a615763334856-build.zip"
+        }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3oo8gk71zj1du",
+          "type": "manual"
+        }
+      }
+    }
   }
 }

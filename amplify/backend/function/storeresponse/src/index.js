@@ -34,6 +34,9 @@ exports.handler = async (event) => {
         positive: positive
         }
     };
+    
+    //Add timestamp
+    //Add survey
 
 
     try {

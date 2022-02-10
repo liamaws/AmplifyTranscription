@@ -115,7 +115,7 @@ function App() {
 
     async function storeResponse(text, sentiment){
       var response = await axios.post( // Call storage endpoint to store tokens in dynamoDB
-        'https://8dc3yts0yj.execute-api.us-east-1.amazonaws.com/ramtest/response',
+        'https://52p77ag187.execute-api.us-east-1.amazonaws.com/sacapstone/response',
         {
             text: text,
             predominant: sentiment['predominant'],
