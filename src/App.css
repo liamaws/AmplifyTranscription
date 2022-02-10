@@ -36,7 +36,11 @@
   color: #FF9900;
 }
 .App-body-description {
-  color: #232F3E
+  color: #232F3E;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
 }
 
 .logo {

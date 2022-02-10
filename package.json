@@ -4,15 +4,23 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^1.2.2",
+    "@emotion/react": "^11.7.1",
+    "@emotion/style": "^0.8.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.4.1",
+    "@mui/styled-engine-sc": "^5.4.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "aws-amplify": "^4.1.0",
     "axios": "^0.25.0",
+    "fa-icons": "^0.2.0",
     "microphone-stream": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import Amplify, { Storage, Predictions } from 'aws-amplify';
+import Amplify, { Predictions } from 'aws-amplify';
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 import {FaMicrophone} from 'react-icons/fa';
 import awsconfig from './aws-exports';
@@ -13,7 +13,8 @@ Amplify.addPluggable(new AmazonAIPredictionsProvider());
 function App() {
 
   function SpeechToText(props) {
-    const [response, setResponse] = useState("Press 'start recording' to begin your transcription. Press STOP recording once you finish speaking.")
+    const [response, setResponse] = useState("Click to start recording")
+    const [processing, setProcessing] = useState(false);
   
     function AudioRecorder(props) {
       const [recording, setRecording] = useState(false);
@@ -73,20 +74,23 @@ function App() {
         micStream.stop();
         setMicStream(null);
         setRecording(false);
+        setProcessing(true);
   
         const resultBuffer = audioBuffer.getData();
   
         if (typeof finishRecording === "function") {
           finishRecording(resultBuffer);
         }
-  
       }
   
       return (
         <div className="audioRecorder">
           <div>
-            {recording && <button onClick={stopRecording}><FaMicrophone/></button>}
-            {!recording && <button onClick={startRecording}><FaMicrophone/></button>}
+            {(!recording && !processing) && <p>Click to Start Recording</p>}
+            {(recording && !processing) && <p>Recording. Click to Stop Recording</p>}
+            {recording && <button className="mic2"onClick={stopRecording}><FaMicrophone/></button>}
+            {(!recording && !processing) && <button className="mic"onClick={startRecording}><FaMicrophone/></button>}
+            {processing && <p>Thank you for your feedback. Your response has been recorded</p>}
           </div>
         </div>
       );
@@ -94,7 +98,6 @@ function App() {
 
     function getFullText(textToInterpret){
       console.log(textToInterpret)
-      setResponse(textToInterpret)
       Predictions.interpret({
         text: {
           source: {
@@ -127,6 +130,7 @@ function App() {
         },
         { headers: { 'Content-Type': 'application/json' } }
     )
+    setProcessing(false);
     return response;
     }
   
@@ -148,9 +152,8 @@ function App() {
     return (
       <div className="Text">
         <div>
-          <h3>Speech to text</h3>
           <AudioRecorder finishRecording={convertFromBuffer} />
-          <p>{response}</p>
+          {/* <p>{response}</p> */}
         </div>
       </div>
     );
@@ -161,11 +164,6 @@ function App() {
 
   
   return (
-    // <div className="App">
-
-    //   Transcribe Audio
-    //   <SpeechToText />
-    // </div>
     <div className="App">
     <header className="App-header">
       <p>
@@ -185,14 +183,8 @@ function App() {
       </p>
         </div> 
     <p>
-        Click the microphone below to start recording
       </p>
-      {/* <button className={this.state.micOn ? 'mic2':'mic'} onClick={ () => this.micCheck() }>
-        <FaMicrophone/>
-      </button> */}
-      {/* <label>{this.state.micOn ? 'recording':''}</label> */}
       <div>
-      Transcribe Audio
       <SpeechToText />
       </div>
     </div>
