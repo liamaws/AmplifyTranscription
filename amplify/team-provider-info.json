@@ -32,6 +32,12 @@
     "categories": {
       "auth": {
         "reactspeechmars2d300eb2": {}
+      },
+      "function": {
+        "storeresponse": {
+          "deploymentBucketName": "amplify-reactspeechmars-ramtest-150318-deployment",
+          "s3Key": "amplify-builds/storeresponse-506c4c534f6561503646-build.zip"
+        }
       }
     }
   }

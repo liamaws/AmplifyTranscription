@@ -1,0 +1,10 @@
+{
+  "resourceName": "resposes",
+  "tableName": "resposes",
+  "partitionKey": {
+    "fieldName": "text",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

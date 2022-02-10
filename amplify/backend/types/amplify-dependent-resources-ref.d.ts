@@ -15,14 +15,34 @@ export type AmplifyDependentResourcesAttributes = {
             "region": "string",
             "language": "string"
         },
-        "speechgenMars": {
-            "region": "string",
-            "language": "string",
-            "voice": "string"
-        },
         "interpretTextf16f0efa": {
             "region": "string",
             "type": "string"
+        }
+    },
+    "storage": {
+        "resposes": {
+            "Name": "string",
+            "Arn": "string",
+            "StreamArn": "string",
+            "PartitionKeyName": "string",
+            "PartitionKeyType": "string",
+            "Region": "string"
+        }
+    },
+    "function": {
+        "storeresponse": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        }
+    },
+    "api": {
+        "api33aa2c7a": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
         }
     }
 }

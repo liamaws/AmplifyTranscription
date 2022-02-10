@@ -5,6 +5,7 @@ import Amplify, { Storage, Predictions } from 'aws-amplify';
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 import awsconfig from './aws-exports';
 import mic from 'microphone-stream';
+import axios from 'axios';
 Amplify.configure(awsconfig);
 Amplify.addPluggable(new AmazonAIPredictionsProvider());
 
@@ -101,10 +102,31 @@ function App() {
           type: "ALL"
         }
       })
-      .then(result => console.log({ result }))
+      .then(result => test(textToInterpret,result))
       .catch(err => console.log({ err }));
+    }
 
 
+    function test(text,sentiment){
+      // console.log(text)
+      console.log(sentiment['textInterpretation']['sentiment'])
+      storeResponse(text, sentiment['textInterpretation']['sentiment'])
+    }
+
+    async function storeResponse(text, sentiment){
+      var response = await axios.post( // Call storage endpoint to store tokens in dynamoDB
+        'https://8dc3yts0yj.execute-api.us-east-1.amazonaws.com/ramtest/response',
+        {
+            text: text,
+            predominant: sentiment['predominant'],
+            mixed: sentiment['mixed'],
+            negative: sentiment['negative'],
+            neutral: sentiment['neutral'],
+            positive: sentiment['positive']
+        },
+        { headers: { 'Content-Type': 'application/json' } }
+    )
+    return response;
     }
   
     function convertFromBuffer(bytes) {
