@@ -31,12 +31,10 @@ exports.handler = async (event) => {
         mixed: mixed,
         negative: negative,
         neutral: neutral,
-        positive: positive
+        positive: positive,
+        timestamp: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
         }
     };
-    
-    //Add timestamp
-    //Add survey
 
 
     try {

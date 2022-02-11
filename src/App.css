@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #232F3E;
-  height: 10vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,21 +26,20 @@
 
 
 .App-body {
-  background-color: #f1faff;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 3vmin);
-  color: #FF9900;
+  color: navy;
 }
 .App-body-description {
   color: #232F3E;
   width: 60%;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 20px;
+  margin-top: -200px;
 }
 
 .logo {
@@ -50,7 +49,7 @@
 
 }
 .mic {
-  color: #FF9900;
+  color: navy;
   font-size: 20rem;
   padding-top: 20px;
 }
@@ -60,8 +59,28 @@
   padding-top: 20px;
 }
 .mic:hover {
-  color: #af6901;
+  color: #00004d;
   
+}
+
+.text{
+  margin-top: -75px;
+}
+
+.greentext{
+  margin-top: -75px;
+  color:green;
+}
+
+.text2{
+  margin-top: -75px;
+  color:red;
+}
+
+.check{
+  color:green;
+  font-size: 20rem;
+  padding-top: 20px;
 }
 
 @keyframes App-logo-spin {

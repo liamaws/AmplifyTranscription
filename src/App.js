@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+import logo from './assets/logo.png'
 import './App.css';
 import React, { useState } from 'react';
 import Amplify, { Predictions } from 'aws-amplify';
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
-import {FaMicrophone} from 'react-icons/fa';
+import {FaMicrophone, FaCheck} from 'react-icons/fa';
 import awsconfig from './aws-exports';
 import mic from 'microphone-stream';
 import axios from 'axios';
@@ -86,11 +86,13 @@ function App() {
       return (
         <div className="audioRecorder">
           <div>
-            {(!recording && !processing) && <p>Click to Start Recording</p>}
-            {(recording && !processing) && <p>Recording. Click to Stop Recording</p>}
+            {(!recording && !processing) && <p className='text'>Click to start recording feedback</p>}
+            {(recording && !processing) && <p className='text2'> Recording your feedback. Click to stop recording.</p>}
             {recording && <button className="mic2"onClick={stopRecording}><FaMicrophone/></button>}
             {(!recording && !processing) && <button className="mic"onClick={startRecording}><FaMicrophone/></button>}
-            {processing && <p>Thank you for your feedback. Your response has been recorded</p>}
+            
+            {processing && <p className='greentext'>Thank you for your feedback. Your response has been recorded.</p>}
+            {processing && <FaCheck className='check'></FaCheck>}
           </div>
         </div>
       );
@@ -166,20 +168,19 @@ function App() {
   return (
     <div className="App">
     <header className="App-header">
-      <p>
-        VoxLoreum
-      </p>
-      </header>
-    <div className="App-body">
     <div className="logo">
         <img src={logo} />
       </div>
+      </header>
+    <div className="App-body">
+    {/* <div className="logo">
+        <img src={logo} />
+      </div> */}
       <div className="App-body-description">
-      
       <p>
-      Thank you for using AnyCompany SaaS. We appreciate you!
+      Thank you for using AnyCompany's services. 
        We have simplified our feedback process. 
-       Please share your thoughts using your voice and we’ll take it from there!
+       Please share your thoughts and feedback using your voice. Thanks!
       </p>
         </div> 
     <p>

@@ -60,7 +60,7 @@
       "function": {
         "storeresponse": {
           "deploymentBucketName": "amplify-reactspeechmars-sacapstone-93127-deployment",
-          "s3Key": "amplify-builds/storeresponse-72512f7a615763334856-build.zip"
+          "s3Key": "amplify-builds/storeresponse-313149656b5348716951-build.zip"
         }
       },
       "hosting": {
